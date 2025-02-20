@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>¡Feliz Cumpleaños Karla!</title>
+    <style>
+        body {
+            font-family: 'Comic Sans MS', cursive, sans-serif;
+            text-align: center;
+            background-color: #f9f9f9;
+            color: #333;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+        .container {
+            max-width: 90%;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: white;
+            border-radius: 15px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+        }
+        img {
+            width: 80%;
+            max-width: 300px;
+            border-radius: 50%;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+            margin: 20px 0;
+        }
+        .message {
+            margin: 20px 0;
+            font-size: 1.5em;
+            color: #e91e63;
+        }
+        .video-container {
+            margin: 20px 0;
+        }
+        iframe {
+            width: 100%;
+            max-width: 560px;
+            height: 315px;
+            border: none;
+            border-radius: 10px;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 1em;
+            margin: 10px;
+            cursor: pointer;
+            background-color: #e91e63;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+        button:hover {
+            background-color: #c2185b;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>¡Feliz Cumpleaños Karla!</h1>
+        <img src="karla.jpg" alt="Karla">
+        <div class="message">
+            ¡Karla, hoy es tu día especial! 🎉<br>
+            Esperamos que te diviertas tanto como este código. 😜
+        </div>
+        <button id="video1Btn">Ver Video</button>
+        <div class="video-container" id="video1"></div>
+        <button id="video2Btn" style="display: none;">Presiona aquí para seguir viendo regalos</button>
+        <div class="video-container" id="video2"></div>
+        <button id="video3Btn" style="display: none;">Último regalo</button>
+        <div class="video-container" id="video3"></div>
+    </div>
+
+    <script>
+        document.getElementById('video1Btn').addEventListener('click', function() {
+            document.getElementById('video1').innerHTML = `
+                <iframe src="https://www.youtube.com/embed/0F7I2bQcG0Q" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            `;
+            document.getElementById('video2Btn').style.display = 'block';
+            this.style.display = 'none';
+        });
+
+        document.getElementById('video2Btn').addEventListener('click', function() {
+            document.getElementById('video2').innerHTML = `
+                <iframe src="https://www.youtube.com/embed/EykxH9e7EcU" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            `;
+            document.getElementById('video3Btn').style.display = 'block';
+            this.style.display = 'none';
+        });
+
+        document.getElementById('video3Btn').addEventListener('click', function() {
+            document.getElementById('video3').innerHTML = `
+                <iframe src="https://www.youtube.com/embed/UbBpCCTN_0Q" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            `;
+            this.style.display = 'none';
+        });
+    </script>
+</body>
+</html>
